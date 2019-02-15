@@ -1,7 +1,7 @@
 {
-  "name": "page",
+  "name": "@nuxeo/page",
   "description": "Tiny client-side router",
-  "version": "1.11.4",
+  "version": "1.11.4-SNAPSHOT",
   "license": "MIT",
   "repository": {
     "type": "git",
