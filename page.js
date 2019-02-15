@@ -847,7 +847,9 @@ pathToRegexp_1.tokensToRegExp = tokensToRegExp_1;
     return function onpopstate(e) {
       if (!loaded) return;
       var page = this;
-      if (e.state) {
+      // fix for Edge 41 where path and e.state are equal and cause navigation to fail
+      // might be relate to https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/11373805/
+      if (e.state && !(/Edge/.test(navigator.userAgent))) {
         var path = e.state.path;
         page.replace(path, e.state);
       } else if (isLocation) {
