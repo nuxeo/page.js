@@ -8,7 +8,7 @@
    * Module dependencies.
    */
 
-  var pathtoRegexp = require('path-to-regexp');
+  var { pathtoRegexp } = require('path-to-regexp');
 
   /**
    * Module exports.
