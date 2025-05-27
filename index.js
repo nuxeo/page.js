@@ -6,7 +6,7 @@
    * Module dependencies.
    */
 
-  var pathtoRegexp = require('path-to-regexp');
+  var { pathtoRegexp } = require('path-to-regexp');
 
   /**
    * Short-cuts for global-object checks
