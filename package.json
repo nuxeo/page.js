@@ -1,7 +1,7 @@
 {
   "name": "@nuxeo/page",
   "description": "Tiny client-side router",
-  "version": "1.11.4-nx.0",
+  "version": "1.11.4-nx.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
     "make": "rollup -c rollup.config.js"
   },
   "dependencies": {
-    "path-to-regexp": "~1.2.1"
+    "path-to-regexp": "~8.2.0"
   },
   "devDependencies": {
     "chai": "^1.10.0",
