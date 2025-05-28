@@ -3,7 +3,7 @@ import nodeResolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
 
 export default (commandLineArgs) => {
-  const isMinimized = !!commandLineArgs.minimiz;
+  const isMinimized = !!commandLineArgs.minimize;
 
   return {
     input: "index.js",
@@ -13,6 +13,12 @@ export default (commandLineArgs) => {
       name: "page",
       sourcemap: true,
     },
-    plugins: [nodeResolve(), commonjs(), ...(isMinimized ? [terser()] : [])],
+    plugins: [
+      nodeResolve(),
+      commonjs({
+        include: ["node_modules/**"],
+      }),
+      ...(isMinimized ? [terser()] : []),
+    ],
   };
 };

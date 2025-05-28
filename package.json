@@ -23,7 +23,7 @@
     "test-cov": "jscoverage index.js index-cov.js; PAGE_COV=1 mocha test/tests.js -R html-cov > coverage.html",
     "make": "rollup -c rollup.config.js",
     "build": "rollup --config",
-    "build:min": "rollup --config --minimiz"
+    "build:min": "rollup --config --minimize"
   },
   "dependencies": {
     "path-to-regexp": "~8.2.0"
