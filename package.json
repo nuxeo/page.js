@@ -15,17 +15,23 @@
   "main": "index.js",
   "browser": "page.js",
   "module": "page.mjs",
+  "type": "module",
   "scripts": {
     "engine-deps": "install-engine-dependencies",
     "test": "jshint index.js test/tests.js && mocha test/tests.js",
     "serve": "serve test",
     "test-cov": "jscoverage index.js index-cov.js; PAGE_COV=1 mocha test/tests.js -R html-cov > coverage.html",
-    "make": "rollup -c rollup.config.js"
+    "make": "rollup -c rollup.config.js",
+    "build": "rollup --config",
+  "build:min": "rollup --config --minimiz"
   },
   "dependencies": {
     "path-to-regexp": "~8.2.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
     "chai": "^1.10.0",
     "coveralls": "^2.11.2",
     "engine-dependencies": "^0.2.12",
@@ -36,7 +42,7 @@
     "jshint": "^2.5.10",
     "mocha": "^2.0.1",
     "mocha-lcov-reporter": "0.0.1",
-    "rollup": "^0.54.1",
+    "rollup": "^4.41.1",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.2",
     "serve": "*",
