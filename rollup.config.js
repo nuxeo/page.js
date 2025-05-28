@@ -16,7 +16,7 @@ export default (commandLineArgs) => {
     plugins: [
       nodeResolve(),
       commonjs({
-        include: ["node_modules/**"],
+        include: ["node_modules/**", "**"],
       }),
       ...(isMinimized ? [terser()] : []),
     ],
